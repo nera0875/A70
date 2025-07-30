@@ -50,12 +50,8 @@ dist
 storybook-static
 
 # Compilation output
-*.js
-*.jsx
-*.mjs
-*.ts
-*.tsx
-*.mts
+/dist/
+/build/
 
 # Dependencies
 node_modules/
