@@ -1,4 +1,4 @@
-import { useRef } from 'react'
+import { useRef, useMemo } from 'react'
 import { useFrame } from '@react-three/fiber'
 import { Sphere } from '@react-three/drei'
 import * as THREE from 'three'
@@ -18,12 +18,15 @@ const DNAHelix = () => {
     return points
   }
 
-  const helix1 = createHelixPoints(100, 1, 8)
-  const helix2 = createHelixPoints(100, 1, 8).map(([x, y, z]) => [-x, y, -z]) // Mirror for second strand
+  const [helix1, helix2] = useMemo(() => {
+    const strand1 = createHelixPoints(100, 1, 8)
+    const strand2 = createHelixPoints(100, 1, 8).map(([x, y, z]) => [-x, y, -z])
+    return [strand1, strand2]
+  }, [])
 
-  useFrame(() => {
+  useFrame((state, delta) => {
     if (groupRef.current) {
-      groupRef.current.rotation.y += 0.01
+      groupRef.current.rotation.y += 0.5 * delta
     }
   })
 

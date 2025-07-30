@@ -29,15 +29,15 @@ const AISection = () => {
       <p>L'IA transforme notre monde. Découvrez comment nous repoussons les limites.</p>
       
       <div className="ai-features">
-        <motion.div variants={itemVariants} className="feature-card">
+        <motion.div variants={itemVariants} animate={inView ? "visible" : "hidden"} className="feature-card">
           <h3>Apprentissage Automatique</h3>
           <p>Des algorithmes qui apprennent et s'améliorent avec les données.</p>
         </motion.div>
-        <motion.div variants={itemVariants} className="feature-card">
+        <motion.div variants={itemVariants} animate={inView ? "visible" : "hidden"} className="feature-card">
           <h3>Traitement du Langage Naturel</h3>
           <p>Donner aux machines la capacité de comprendre le langage humain.</p>
         </motion.div>
-        <motion.div variants={itemVariants} className="feature-card">
+        <motion.div variants={itemVariants} animate={inView ? "visible" : "hidden"} className="feature-card">
           <h3>Vision par Ordinateur</h3>
           <p>Permettre aux systèmes d'interpréter et de comprendre le monde visuel.</p>
         </motion.div>

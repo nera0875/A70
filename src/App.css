@@ -15,8 +15,6 @@
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
   min-width: 320px;
   min-height: 100vh;
   overflow-x: hidden;
@@ -46,7 +44,7 @@ p {
 }
 
 .App {
-  width: 100vw;
+  width: 100%;
   overflow-x: hidden;
   color: #f0f0f0;
   text-align: center;
@@ -299,6 +297,10 @@ section {
 }
 
 @media (max-width: 480px) {
+  .navigation {
+    padding: 0.8rem 1rem;
+  }
+
   h1 {
     font-size: 2em;
   }
